@@ -11,7 +11,7 @@ const linksRoutes = require('./routes/linksRoutes')
 const shortRoutes = require('./routes/shortRoutes')
 const {userCheck , requireAuth } = require('./middleware.js/authCheck')
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 const app = express()
 
