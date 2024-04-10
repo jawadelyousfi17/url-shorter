@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <form action="/links/new" method="post">
+        <div class="mb-3">
+            <% if (error) { %>
+                <% if (value = error.error) { uflag='error' %>
+                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                       <%= value %>
+                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                <% } %>
+                <% } %>
+
+            <label for="longurl" class="form-label">Long URL:</label>
+            <input value="<%= link? link : null %>" type="text" id="longurl" name="longurl" class="form-control" placeholder="Enter your long URL" required>
+            <label style="margin-top: 10px;" for="shorturlkey" class="form-label">key</label>
+            <input  type="text" id="shorturlkey" name="shorturlkey" class="form-control" placeholder="Enter your long URL" >
+        </div>
+
+        <button type="submit" class="btn btn-primary">Short</button>
+    </form>
+</div>
